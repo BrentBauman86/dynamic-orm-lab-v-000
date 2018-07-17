@@ -26,4 +26,6 @@ class InteractiveRecord
       self.send("#{key}=", value)
   end
 end
+
+  attr_accessor
 end
