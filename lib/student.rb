@@ -4,5 +4,5 @@ require 'interactive_record.rb'
 
 class Student < InteractiveRecord
 
-  attr_accessor :name
+  self.column_names.each 
 end
