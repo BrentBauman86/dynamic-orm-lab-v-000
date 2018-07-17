@@ -4,5 +4,7 @@ require 'interactive_record.rb'
 
 class Student < InteractiveRecord
 
-  def 
+  def self.table_name
+
+  end
 end
