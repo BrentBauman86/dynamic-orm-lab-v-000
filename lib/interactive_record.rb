@@ -23,8 +23,8 @@ class InteractiveRecord
   def initialize(options={})
     options.each do |key, value|
       self.send("#{key}=", value)
+    end
   end
-end
 
   def attr_accessor
     self.column_names.each {|col_name| attr_accessor col_name.to_sym}
@@ -58,7 +58,8 @@ end
     DB[:conn].execute(sql)
   end
 
-  def self.find_by 
-    sql = "SELECT * FROM #{self.attr_accessor}"
+  def self.find_by
+    sql = "SELECT * FROM #{self.table_name}"
+    DB[:conn].execute(sql)
   end
 end
