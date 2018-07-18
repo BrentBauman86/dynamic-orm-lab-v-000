@@ -4,7 +4,6 @@ require 'active_support/inflector'
 class InteractiveRecord
 
   def self.table_name
-    # binding.pry
     self.to_s.downcase.pluralize
   end
 
@@ -57,5 +56,9 @@ end
   def self.find_by_name(name)
     sql = "SELECT * FROM #{self.table_name} WHERE name = '#{name}'"
     DB[:conn].execute(sql)
+  end
+
+  def self.find_by 
+    sql = "SELECT * FROM #{self.attr_accessor}"
   end
 end
